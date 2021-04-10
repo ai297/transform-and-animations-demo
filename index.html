@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Transforms & Animations demo</title>
+  <link rel="stylesheet" href="./styles/style.css">
+  <script src="./dist/components.js"></script>
+  <script src="./dist/index.js"></script>
+</head>
+
+<body>
+  <fullscreen-section>
+    <h1>CSS Transforms & Animations</h1>
+    <ul>
+      <li>
+        <h3>Transform 2d</h3>
+        <ul>
+          <li><a href="#transform-functions">Transform functions</a></li>
+          <li><a href="#transform-origin">Transform-origin</a></li>
+          <li><a href="#multiple-transforms">Multiple transforms</a></li>
+        </ul>
+      </li>
+      <li>
+        <h3><a href="#transitions">Transitions</a></h3>
+      </li>
+      <li>
+        <h3><a href="#animations">Animations & Keyframes</a></h3>
+      </li>
+    </ul>
+  </fullscreen-section>
+
+  <h2 class="section-separator">Transform 2d</h2>
+
+  <fullscreen-section direction="row" id="transform-functions">
+    <div class="example-column">
+      <example-box name="transform2dexample"></example-box>
+    </div>
+    <div class="controls-column">
+      <h3>Transform functions</h3>
+      <p>Read more: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/transform</a></p>
+      <ul class="controls">
+        <li>
+          <command-button command="transformExample" param="scale(1.5)">scale(1.5)</command-button>
+          <command-button command="transformExample" param="scaleX(2)">scaleX(2)</command-button>
+          <command-button command="transformExample" param="scaleY(2)">scaleY(2)</command-button>
+          <command-button command="transformExample" param="scale(0.5, 2)">scale(0.5, 2)</command-button>
+        </li>
+        <li>
+          <command-button command="transformExample" param="translate(-150%, -100%)">translate(-150%, -100%)</command-button>
+          <command-button command="transformExample" param="translateX(100%)">translateX(100%)</command-button>
+          <command-button command="transformExample" param="translateY(100%)">translateY(100%)</command-button>
+        </li>
+        <li>
+          <command-button command="transformExample" param="rotate(45deg)">rotate(45deg)</command-button>
+        </li>
+        <li>
+          <command-button command="transformExample" param="skewX(30deg)">skewX(30deg)</command-button>
+          <command-button command="transformExample" param="skewY(30deg)">skewY(30deg)</command-button>
+          <command-button command="transformExample" param="skew(20deg, 30deg)">skew(20deg, 30deg)</command-button>
+        </li>
+        <li>
+          <command-button command="transformExample" param="matrix(1.5, 0, .5, 1.5, 50, 0)">matrix(1.5, 0, .5, 1.5, 50, 0)</command-button>
+        </li>
+      </ul>
+    </div>
+  </fullscreen-section>
+
+  <fullscreen-section direction="row" id="transform-origin">
+    <div class="controls-column">
+      <h3>Transform origin</h3>
+      <div>
+        <command-button command="originExample" param="center">center</command-button>
+        <command-button command="originExample" param="-50% 50%">-50% 50%</command-button>
+      </div>
+    </div>
+    <div class="example-column">
+      <example-box name="transformOriginExample" class="rotating"></example-box>
+    </div>
+  </fullscreen-section>
+
+  <fullscreen-section direction="row" id="multiple-transforms">
+    <div class="example-column">
+      <example-box name="multiTransformExample"></example-box>
+    </div>
+    <div class="controls-column">
+      <h3>Multiple transforms</h3>
+      <ul class="controls">
+        <li>
+          <command-button command="multiTransformExample" param="translateX(100%)">translateX(100%)</command-button>
+          <command-button command="multiTransformExample" param="translateX(-100%)">translateX(-100%)</command-button>
+        </li>
+        <li>
+          <command-button command="multiTransformExample" param="translateY(100%)">translateY(100%)</command-button>
+          <command-button command="multiTransformExample" param="translateY(-100%)">translateY(-100%)</command-button>
+        </li>
+        <li>
+          <command-button command="multiTransformExample" param="rotate(90deg)">rotate(90deg)</command-button>
+          <command-button command="multiTransformExample" param="rotate(-90deg)">rotate(-90deg)</command-button>
+        </li>
+        <li>
+          <command-button command="multiTransformExample" param="scale(2)">scale(2)</command-button>
+          <command-button command="multiTransformExample" param="scale(0.5)">scale(0.5)</command-button>
+        </li>
+      </ul>
+      <display-value name="multiTransformExample" label="transform: ">none</display-value>
+    </div>
+  </fullscreen-section>
+</body>
+
+</html>
