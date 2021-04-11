@@ -1,0 +1,149 @@
+.transition-green {
+  background-color: limegreen;
+  transition: transform .5s;
+}
+.transition-green:hover {
+  transform: scale(2);
+}
+
+.transition-yello {
+  background-color: yellow;
+  transition: all 1s ease-in;
+}
+.transition-yello:hover {
+  width: 20rem;
+  height: 20rem;
+}
+
+.transition-red {
+  background-color: tomato;
+  transition: opacity 1s ease;
+}
+.transition-red:hover { opacity: 0; }
+
+.transition-blue {
+  background-color: steelblue;
+  cursor: pointer;
+  transition:
+    opacity .5s ease-out,
+    width .5s linear .5s,
+    height .5s linear .5s;
+}
+.hidden {
+  width: 0;
+  height: 0;
+  opacity: 0;
+}
+
+.animation-orange {
+  background-color: orange;
+  animation: example 3s ease-in-out infinite;
+  animation-play-state: paused;
+}
+.animation-orange:hover {
+  animation-play-state: running;
+}
+
+.animation-violet {
+  background-color: palevioletred;
+}
+.animation-violet.animated {
+  animation: example 3s ease-in-out;
+}
+
+@keyframes example {
+  from { transform: rotate(0turn); }
+  50% {
+    transform: rotate(.25turn) scale(1.5);
+  }
+  to { transform: rotate(1turn); }
+}
+.text-demo > div {
+  position: relative;
+  font-size: 2rem;
+}
+
+.underline-demo,
+.under-upperline-demo { cursor: pointer; }
+.underline-demo::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  left: 50%;
+  bottom: -2px;
+  width: 0;
+  background-color: white;
+  transition: all .5s;
+}
+.underline-demo:hover::after {
+  left: 0;
+  width: 100%;
+}
+.under-upperline-demo::after {
+  content: '';
+  position: absolute;
+  height: 2px;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  background-color: white;
+  transition: all .5s;
+}
+.under-upperline-demo::before {
+  content: '';
+  position: absolute;
+  height: 2px;
+  top: -2px;
+  right: 0;
+  width: 0;
+  background-color: white;
+  transition: all .5s .5s;
+}
+.under-upperline-demo:hover::after,
+.under-upperline-demo:hover:before { width: 100%; }
+
+
+/* Three sections background example */
+.demo {
+  position: relative;
+  width: 50%;
+  min-height: 50vh;
+}
+.demo-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 0;
+}
+.demo, .demo-bg {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: hidden;
+}
+.demo-first-bg { background-image: url('./assets/01.jpg'); }
+.demo-second-bg { background-image: url('./assets/02.jpg'); }
+.demo-third-bg { background-image: url('./assets/03.jpg'); }
+
+.demo-first,
+.demo-second,
+.demo-third {
+  flex: 1 1 33%;
+  font-size: 2rem;
+  z-index: 1;
+  opacity: .5;
+}
+.demo-first, .demo-second { border-right: 1px solid rgba(255, 255, 255, 0.5); }
+
+.demo-bg > div {
+  flex: 1 1 33%;
+  transition: flex .4s ease-in-out;
+  background-position: center;
+  background-size: cover;
+}
+.demo-first:hover ~ .demo-bg > .demo-first-bg { flex: 1 0 100%; }
+.demo-second:hover ~ .demo-bg > .demo-second-bg { flex: 1 0 100%; }
+.demo-third:hover ~ .demo-bg > .demo-third-bg { flex: 1 0 100%; }
+

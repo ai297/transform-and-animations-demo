@@ -2,12 +2,14 @@ const exampleBox1Name = 'transform2dexample';
 const exampleBox2Name = 'transformOriginExample';
 const exampleBox3Name = 'multiTransformExample';
 
+const transitionExampleBoxBlue = 'transitionExampleBoxBlue';
+const animationExampleBox = 'animationExampleBox';
+
 const NONE = 'none';
 
 const transformExample = (transform: string) => components.ExampleBox.UpdateTransform(transform, exampleBox1Name);
 const originExample = (origin: string) => components.ExampleBox.UpdateOrigin(origin, exampleBox2Name);
 const multipleTransformExample = (transform: string) => {
-  console.log(transform);
   const item = components.DisplayValue.get(exampleBox3Name);
   const oldTransform = item?.value;
   const newTransform = transform === NONE || oldTransform === NONE ?
@@ -26,4 +28,22 @@ components.CommandButton.Commands
     multipleTransformExample(NONE);
   });
 
+
 components.registerAll();
+
+window.onload = () => {
+  const hideExampleElement = components.ExampleBox.get(transitionExampleBoxBlue);
+  const animationEndExampleElement = components.ExampleBox.get(animationExampleBox);
+
+  hideExampleElement?.addEventListener('click', () => {
+    hideExampleElement?.classList.toggle('hidden');
+  });
+
+  animationEndExampleElement?.addEventListener('click', () => {
+    animationEndExampleElement?.classList.add('animated');
+  });
+  animationEndExampleElement?.addEventListener('animationend', () => {
+    animationEndExampleElement?.classList.remove('animated');
+    alert('Animation ended')
+  });
+}

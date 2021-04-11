@@ -15,7 +15,8 @@ namespace components {
   }
 
   export class ExampleBox extends HTMLElement {
-    private static readonly instances = new Set<ExampleBox>();
+    private static readonly instances = new Map<string, ExampleBox>();
+    static get(name: string) { return ExampleBox.instances.get(name); }
     static UpdateTransform(transform: string, name = '') {
       ExampleBox.instances.forEach((item) => {
         if (item.name === name || name === '*') item.style.transform = transform;
@@ -28,8 +29,8 @@ namespace components {
     }
 
     private get name() { return this.getAttribute('name') ?? ''; }
-    connectedCallback() { ExampleBox.instances.add(this); }
-    disconnectedCallback() { ExampleBox.instances.delete(this); }
+    connectedCallback() { ExampleBox.instances.set(this.name, this); }
+    disconnectedCallback() { ExampleBox.instances.delete(this.name); }
   }
 
   export class DisplayValue extends ComponentBase {

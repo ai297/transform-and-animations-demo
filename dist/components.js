@@ -15,6 +15,7 @@ var components;
     }
     components.FullscreenSection = FullscreenSection;
     class ExampleBox extends HTMLElement {
+        static get(name) { return ExampleBox.instances.get(name); }
         static UpdateTransform(transform, name = '') {
             ExampleBox.instances.forEach((item) => {
                 if (item.name === name || name === '*')
@@ -28,10 +29,10 @@ var components;
             });
         }
         get name() { var _a; return (_a = this.getAttribute('name')) !== null && _a !== void 0 ? _a : ''; }
-        connectedCallback() { ExampleBox.instances.add(this); }
-        disconnectedCallback() { ExampleBox.instances.delete(this); }
+        connectedCallback() { ExampleBox.instances.set(this.name, this); }
+        disconnectedCallback() { ExampleBox.instances.delete(this.name); }
     }
-    ExampleBox.instances = new Set();
+    ExampleBox.instances = new Map();
     components.ExampleBox = ExampleBox;
     class DisplayValue extends ComponentBase {
         static get(name) { return DisplayValue.instances.get(name); }

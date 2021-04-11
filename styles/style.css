@@ -99,3 +99,44 @@ command-button { display: inline-block; }
   from { transform: rotate(0turn); }
   to { transform: rotate(1turn); }
 }
+
+.animation-example,
+.transition-examples {
+  min-width: 70%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.transition-examples > div,
+.animation-example > div {
+  margin: 1rem;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 25%;
+}
+
+.demo-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  color: white;
+}
+
+.text-demo {
+  min-width: 30%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.demo-wrapper {
+  min-width: 70%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}

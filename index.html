@@ -7,6 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CSS Transforms & Animations demo</title>
   <link rel="stylesheet" href="./styles/style.css">
+  <link rel="stylesheet" href="./demo.css">
   <script src="./dist/components.js"></script>
   <script src="./dist/index.js"></script>
 </head>
@@ -24,10 +25,12 @@
         </ul>
       </li>
       <li>
-        <h3><a href="#transitions">Transitions</a></h3>
-      </li>
-      <li>
-        <h3><a href="#animations">Animations & Keyframes</a></h3>
+        <h3>CSS Animations</h3>
+        <ul>
+          <li><a href="#transitions">CSS transition</a></li>
+          <li><a href="#animations">CSS animation & keyframes</a></li>
+          <li><a href="#transition-demo">Simple transitions demo</a></li>
+        </ul>
       </li>
     </ul>
   </fullscreen-section>
@@ -36,7 +39,7 @@
 
   <fullscreen-section direction="row" id="transform-functions">
     <div class="example-column">
-      <example-box name="transform2dexample"></example-box>
+      <example-box name="transform2dexample" class="demo-item">Hello!</example-box>
     </div>
     <div class="controls-column">
       <h3>Transform functions</h3>
@@ -77,13 +80,13 @@
       </div>
     </div>
     <div class="example-column">
-      <example-box name="transformOriginExample" class="rotating"></example-box>
+      <example-box name="transformOriginExample" class="rotating demo-item">woo hoo!</example-box>
     </div>
   </fullscreen-section>
 
   <fullscreen-section direction="row" id="multiple-transforms">
     <div class="example-column">
-      <example-box name="multiTransformExample"></example-box>
+      <example-box name="multiTransformExample" class="demo-item">Yo!</example-box>
     </div>
     <div class="controls-column">
       <h3>Multiple transforms</h3>
@@ -106,6 +109,74 @@
         </li>
       </ul>
       <display-value name="multiTransformExample" label="transform: ">none</display-value>
+    </div>
+  </fullscreen-section>
+
+  <h2 class="section-separator">CSS Animations</h2>
+
+  <fullscreen-section id="transitions">
+    <h3>CSS transition</h3>
+    <ul>
+      <li><display-value label="transition: ">property duration timing-function delay</display-value></li>
+      <li>JS Event: transitionend - will dispatched when transition is end</li>
+    </ul>
+    <p>Animatable CSS properties: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties</a></p>
+    <p>Cubic-bezier builder: <a href="http://roblaplaca.com/examples/bezierBuilder/" target="_blank">http://roblaplaca.com/examples/bezierBuilder/</a></p>
+    <p>Подробно про transition на русском: <a href="https://html5book.ru/css3-transition/" target="_blank">https://html5book.ru/css3-transition/</a></p>
+  </fullscreen-section>
+
+  <fullscreen-section>
+    <h3>Transitions example</h3>
+    <div class="transition-examples">
+      <div class="transition-green demo-item">hover me</div>
+      <div class="transition-yello demo-item">hover me</div>
+      <div class="transition-red demo-item">hover me</div>
+      <example-box name="transitionExampleBoxBlue" class="transition-blue demo-item">click me</example-box>
+    </div>
+  </fullscreen-section>
+
+  <fullscreen-section id="animations">
+    <h3>CSS animation & keyframes</h3>
+    <ul>
+      <li><display-value label="animation: "><i>animation-name</i> duration timing-function delay iteration-count direction</display-value></li>
+      <li>
+        <display-value label="@keyframes ">animation-name</display-value>
+<pre>{
+  from { }
+  to { }
+}</pre>
+      </li>
+      <li><display-value label="animation-play-state: ">running / paused</display-value></li>
+      <li>JS Event: animationend - will dispatched when animation is end</li>
+    </ul>
+    <p>Подробно про animation на русском: <a href="https://html5book.ru/css3-animation/" target="_blank">https://html5book.ru/css3-animation/</a></p>
+    <p>Clip-path css animation: <a href="https://css-tricks.com/animating-with-clip-path/" target="_blank">https://css-tricks.com/animating-with-clip-path/</a></p>
+  </fullscreen-section>
+
+  <fullscreen-section>
+    <h3>Animation example</h3>
+    <div class="animation-example">
+      <div class="animation-orange demo-item">hover me</div>
+      <example-box name="animationExampleBox" class="animation-violet demo-item">click me</example-box>
+    </div>
+  </fullscreen-section>
+
+  <fullscreen-section id="transition-demo">
+    <h3>Simple transition demo (without JS)</h3>
+    <div class="text-demo">
+      <div class="underline-demo demo-item">hover me!</div>
+      <div class="under-upperline-demo demo-item">and me!</div>
+    </div>
+    <div class="demo">
+      <div class="demo-first demo-item">One</div>
+      <div class="demo-second demo-item">Two</div>
+      <div class="demo-third demo-item">Three</div>
+
+      <div class="demo-bg">
+        <div class="demo-first-bg"></div>
+        <div class="demo-second-bg"></div>
+        <div class="demo-third-bg"></div>
+      </div>
     </div>
   </fullscreen-section>
 </body>
