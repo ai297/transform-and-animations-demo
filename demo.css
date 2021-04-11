@@ -133,9 +133,17 @@
   flex: 1 1 33%;
   font-size: 2rem;
   z-index: 1;
-  opacity: .5;
+  color: rgba(255, 255, 255, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
+  transition: all .75s;
 }
 .demo-first, .demo-second { border-right: 1px solid rgba(255, 255, 255, 0.5); }
+.demo-first:hover,
+.demo-second:hover,
+.demo-third:hover {
+  color: white;
+  background-color: transparent;
+}
 
 .demo-bg > div {
   flex: 1 1 33%;
